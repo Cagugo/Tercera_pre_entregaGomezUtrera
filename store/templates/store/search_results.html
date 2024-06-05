@@ -1,0 +1,23 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<h2>Search Results</h2>
+<form method="get" action="{% url 'search_products' %}">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for result in results %}
+    <li>
+        <a href="{% url 'product_detail' result.id result_class_name %}">
+            <img src="{{ result.image.url }}" alt="{{ result.name }}">
+            <p>{{ result.name }} - ${{ result.price }}</p>
+        </a>
+    </li>
+    {% empty %}
+    <li>No results found</li>
+    {% endfor %}
+</ul>
+{% endblock %}

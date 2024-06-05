@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+
+{% block title %}{{ type }}{% endblock %}
+
+{% block content %}
+<h2>{{ type }}</h2>
+<ul>
+    {% for product in products %}
+    <li>
+        {% if product.type %}
+            <a href="{% url 'product_detail' product.id product.type %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>{{ product.name }} - ${{ product.price }}</p>
+            </a>
+        {% else %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <p>{{ product.name }} - ${{ product.price }}</p>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
