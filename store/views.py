@@ -1,7 +1,7 @@
 from itertools import product
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect
-from .models import Mask, SurgicalCap, CustomOrder
+from .models import Mask, SurgicalCap, CustomOrder, product
 from .forms import MaskForm, SurgicalCapForm, CustomOrderForm, SearchForm
 
 def index(request):
