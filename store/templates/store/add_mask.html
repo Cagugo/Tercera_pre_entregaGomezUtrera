@@ -3,10 +3,10 @@
 {% block title %}Add Mask{% endblock %}
 
 {% block content %}
-<h2>Add Mask</h2>
+<h2>Añadir Mascarilla</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add Mask</button>
+    <button type="submit">Agregar Mascarilla</button>
 </form>
 {% endblock %}

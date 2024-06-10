@@ -1,0 +1,16 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Custom Orders{% endblock %}
+
+{% block content %}
+<h2>Pedidos personalizados</h2>
+<ul>
+    {% for order in custom_orders %}
+    <li>
+        <p>{{ order.product_type }} - {{ order.custom_text }} ({{ order.order_date }})</p>
+    </li>
+    {% empty %}
+    <li>No se encontraron pedidos personalizados</li>
+    {% endfor %}
+</ul>
+{% endblock %}

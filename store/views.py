@@ -1,7 +1,7 @@
-from itertools import product
+
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect
-from .models import Mask, SurgicalCap, CustomOrder, product
+from .models import Mask, SurgicalCap, CustomOrder
 from .forms import MaskForm, SurgicalCapForm, CustomOrderForm, SearchForm
 
 def index(request):
@@ -31,14 +31,24 @@ def custom_order(request):
         form = CustomOrderForm()
     return render(request, 'store/custom_order.html', {'form': form})
 
+
+def custom_order_list(request):
+    custom_orders = CustomOrder.objects.all()
+    return render(request, 'store/custom_order_list.html', {'custom_orders': custom_orders})
+
+
+
 def search_products(request):
     query = request.GET.get('q')
-    results = product.objects.filter(name__icontains=query)
-    context = {
-        'results': results,
-        'result_class_name': product.__name__.lower(),
-    }
-    return render(request, 'store/search_results.html', context)
+    if query:
+        masks = Mask.objects.filter(name__icontains=query)
+        caps = SurgicalCap.objects.filter(name__icontains=query)
+        results = list(masks) + list(caps)
+        for result in results:
+            result.product_type = result.product_type 
+    else:
+        results = []
+    return render(request, 'store/search_results.html', {'results': results})
 
 
 def add_mask(request):

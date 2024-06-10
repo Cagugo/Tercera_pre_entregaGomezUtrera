@@ -6,6 +6,7 @@ class Mask(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='masks/')
+    product_type = 'mask'
     
     def __str__(self):
         return self.name
@@ -15,6 +16,7 @@ class SurgicalCap(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='caps/')
+    product_type = 'cap'
     
     def __str__(self):
         return self.name

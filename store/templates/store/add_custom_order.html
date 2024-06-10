@@ -3,10 +3,10 @@
 {% block title %}Add Custom Order{% endblock %}
 
 {% block content %}
-<h2>Add Custom Order</h2>
-<form method="post">
+<h2>Añadir pedido personalizado</h2>
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add Custom Order</button>
+    <button type="submit">Agregar pedido personalizador</button>
 </form>
 {% endblock %}
