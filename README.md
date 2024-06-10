@@ -38,7 +38,7 @@ Password: 123456
 - Probar los Formularios de Inserción
 1 Acceder a las Páginas de Inserción:
 Abre tu navegador y accede a las siguientes URLs para probar los formularios de inserción:
-http://127.0.0.1:8000/add-mask/
+** http://127.0.0.1:8000/add-mask/
 
 Ejemplo de prueba para agregar un mascarilla rellenando el formulario:
 Máscara:
@@ -47,7 +47,7 @@ Descripción: Máscara N95 de alta calidad
 Precio: 10.00
 Imagen: Sube una imagen de ejemplo.
 
-http://127.0.0.1:8000/add-surgical-cap/
+** http://127.0.0.1:8000/add-surgical-cap/
 
 Ejemplo de prueba para agregar un Gorro quirúrgico rellenando el formulario:
 Nombre: Gorro Azul
@@ -56,7 +56,7 @@ Precio: 5.00
 Imagen: Sube una imagen de ejemplo.
 
 
-http://127.0.0.1:8000/add-custom-order/
+** http://127.0.0.1:8000/add-custom-order/
 
 Ejemplo de prueba para agregar una Orden personalizada rellenando el formulario:
 Tipo de Producto: Máscara
@@ -71,7 +71,8 @@ Verifica que los datos se hayan guardado correctamente accediendo a las listas d
 Probar el Formulario de Búsqueda
 
 - Acceder a la Página de Búsqueda:
-Abre tu navegador y accede a http://127.0.0.1:8000/search/.
+** Abre tu navegador y accede a http://127.0.0.1:8000/search/.
+
 ** Realizar Búsquedas:
 Ingresa un término de búsqueda que coincida con los productos en tu base de datos.
 Verifica que los resultados se muestren correctamente y que los enlaces a los detalles del producto funcionen.
